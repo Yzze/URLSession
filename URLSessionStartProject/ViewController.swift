@@ -25,7 +25,13 @@ class ViewController: UIViewController {
             print("\n\n response = \(responseUnwrapped.allHeaderFields) ;\n \(responseUnwrapped.statusCode) \n")
             switch result {
             case .success(let team):
-                print("team = \(team)")
+                for i in team.cards {
+                    print("Name card: \(i.name ?? "")")
+                    print("Rarity: \(i.rarity ?? "")")
+                    print("SetName: \(i.setName ?? "")")
+                    print("Type: \(i.type ?? "")")
+                    print("Artist: \(i.artist ?? "") \n")
+                }
                 
             case .failure(let error):
                 print(error)
